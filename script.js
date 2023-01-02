@@ -1,10 +1,8 @@
 const DEFAULT_SIZE = 16;
 const DEFAULT_COLOR = '#4d4949'
-const DEFAULT_MODE = 'color'
 
 let currentSize = DEFAULT_SIZE
 let currentColor = DEFAULT_COLOR
-let currentMode = DEFAULT_MODE
 
 const colorPicker = document.getElementById('colorPicker')
 const colorBtn = document.getElementById('colorBtn')
