@@ -23,7 +23,7 @@ function createGrid(size) {
         const gridElement = document.createElement('div');
         gridElement.classList.add('grid-element');
         gridElement.addEventListener('mousedown', changeColor);
-        // gridElement.addEventListener('mouseover', changeColor);
+        gridElement.addEventListener('mouseover', changeColor);
         grid.appendChild(gridElement)
       }
 }
@@ -40,8 +40,12 @@ function setCurrentMode(newMode) {
     currentMode = newMode;
 }
 
+let mouseDown = false
+document.body.onmousedown = () => (mouseDown = true)
+document.body.onmouseup = () => (mouseDown = false)
+
 function changeColor(e) {
-    // if (e.type === 'mouseover' && !'mousedown') return
+    if (e.type === 'mouseover' && !mouseDown) return
     if (currentMode === 'rainbow') {
         const r = Math.floor(Math.random() * 256);
         const g = Math.floor(Math.random() * 256);
